@@ -23,9 +23,7 @@ const server = http.createServer(app);
 // ✅ Create real Socket.io instance here
 const io = new Server(server, {
   cors: {
-    origin:
-      "https://r01ck4rh-5173.inc1.devtunnels.ms" ||
-      "https://wall-books-7nu0ks7cf-priyam0005s-projects.vercel.app/",
+    origin: "https://wall-books.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   },
   pingTimeout: 60000,
@@ -38,9 +36,7 @@ const io = new Server(server, {
 // enable CORS
 app.use(
   cors({
-    origin:
-      "https://r01ck4rh-5173.inc1.devtunnels.ms" ||
-      "https://wall-books-7nu0ks7cf-priyam0005s-projects.vercel.app/",
+    origin: "https://wall-books.vercel.app",
   })
 );
 
