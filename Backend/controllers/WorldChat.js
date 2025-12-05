@@ -67,6 +67,7 @@ function CreateWorldChat(io) {
       socket.handshake?.address;
 
     if (ip) {
+      console.log(ip);
       const cleaned = ip.replace(/[^a-zA-Z0-9]/g, "").slice(-6);
       return `User-${cleaned}`;
     }
