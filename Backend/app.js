@@ -1,13 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+
 const cors = require("cors");
 const http = require("http");
 
 const { Server } = require("socket.io");
 
-dotenv.config();
+require("dotenv").config();
 
+const mongoUri = process.env.MONGO_URI;
 const authroute = require("./routes/Registration");
 const nexroute = require("./routes/profile");
 const loginhandler = require("./controllers/loginhandller");
@@ -50,7 +51,8 @@ app.get("/", (req, res) => {
 // MongoDB Connection
 mongoose
   .connect(
-    "mongodb+srv://pradumnpathak87:rybn0WY8sh2qHg4K@cluster04.ya6ltkh.mongodb.net/",
+    mongoUri,
+
     {
       ssl: true,
 
